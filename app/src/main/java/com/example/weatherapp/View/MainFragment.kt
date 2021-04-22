@@ -97,6 +97,7 @@ class MainFragment : Fragment() {
     {
         val date = Date((time + timezone) * 1000)
         val format = if (onlyTime) SimpleDateFormat("HH:mm") else SimpleDateFormat("EEE d MMMM", Locale("pl", "PL"))
+        format.timeZone = TimeZone.getTimeZone("UTC")
         return format.format(date)
     }
 }
